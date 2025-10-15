@@ -1,0 +1,15 @@
+
+# 编辑器
+.vscode/
+.idea/
+
+# 构建文件
+build/
+
+# 临时文件
+*.tmp
+*.temp
+
+# 日志
+*.log
+logs/
