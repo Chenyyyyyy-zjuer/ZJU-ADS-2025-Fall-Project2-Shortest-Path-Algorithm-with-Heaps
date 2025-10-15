@@ -1,6 +1,6 @@
 #include <vector>
 
-#include "graph.h"
+#include "../include/graph.h"
 
 using std::vector;
 using std::pair;
@@ -8,7 +8,7 @@ using std::pair;
 Graph::Graph() : _numOfNode(0), _numOfEdge(0), _adjList() {}
 
 explicit Graph::Graph(int numOfNode, int numOfEdge) 
-    : _numOfNode(numOfNode), _numOfEdge(numOfEdge), _adjList(numOfNode) {}
+    : _numOfNode(numOfNode), _numOfEdge(numOfEdge), _adjList(numOfNode + 1) {}
 
 /**
  * 根据节点数是否为0来判断是否为空
@@ -45,7 +45,7 @@ void Graph::addEdge(int start, int end, int weightOfEdge)
     int maxNum = std::max(start, end);
     if (_numOfNode < maxNum) 
     {
-        _adjList.resize(maxNum);
+        _adjList.resize(maxNum + 1);
         _numOfNode = maxNum;
     }
 
