@@ -198,25 +198,21 @@
 
 # 类
 
-1. 遵循 RAII原则。==?这个可能有点麻烦==
+1. 将成员变量设为私有，通过公有成员函数访问。
 
-2. 如果类管理资源，需定义或删除拷贝构造函数、拷贝赋值运算符、移动构造函数、移动赋值运算符。==?可能有点麻烦==
-
-3. 将成员变量设为私有，通过公有成员函数访问。
-
-4. 使用成员初始化列表：
+2. 使用成员初始化列表：
 
    ```c++
    class MyClass
    {
+   private:
+       int _value;   
+   
    public:
        MyClass(int value) : m_value(value)
        {
            ...
        }
-   
-   private:
-       int _value;
    };
    ```
 
@@ -253,6 +249,9 @@ using std::......;
 
 class Calculator
 {
+private:
+    int _cache;   
+ 
 public:
     /**
      * @brief 计算两个数的和
@@ -285,8 +284,7 @@ public:
         return result;
     }
 
-private:
-    int _cache;
+
 };
 
 int main()

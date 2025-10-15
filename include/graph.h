@@ -94,9 +94,8 @@ public:
      * @param end 该有向边的终点
      * @param weightOfEdge 该有向边的权重
      * 
-     * @return true代表添加成功 false代表添加失败
      */
-    bool addEdge(int start, int end, int weightOfEdge);
+    void addEdge(int start, int end, int weightOfEdge);
 
     /**
      * @brief 返回两点之间的边的权重
